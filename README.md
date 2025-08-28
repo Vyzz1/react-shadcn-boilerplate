@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# React + shadcn + React Query Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, practical starter for building React apps with TypeScript, Vite, Tailwind + shadcn-style UI components (Radix + CVA), and data fetching with @tanstack/react-query and axios. This repo includes a simple auth flow with axios interceptors and refresh-token handling, React Query devtools, and a collection of prebuilt UI components under `src/components/ui`.
 
-Currently, two official plugins are available:
+## Quick plan
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Confirm stack and scripts from `package.json`.
 
-## Expanding the ESLint configuration
+- Explain API/axios configuration and refreshing auth flow (hooks in `src/hooks`).
+- Show example of using React Query with the app's axios instance.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- React 18 + TypeScript
+- Vite build tooling
+- Tailwind CSS + shadcn-style components (Radix primitives + CVA)
+- @tanstack/react-query (v5) for server state and caching
+- Axios instances with built-in upload instance and interceptors
+- Token refresh flow using a mutex to avoid concurrent refreshes
+- React Query Devtools and Sonner toaster prewired
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Prerequisites
+
+- Node.js (recommend v18+)
+- npm or a compatible package manager
+
+## Setup (PowerShell)
+
+```powershell
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Start dev server:
+
+```powershell
+npm run dev
+```
+
+Build for production:
+
+```powershell
+npm run build
+```
+
+Preview production build locally:
+
+```powershell
+npm run preview
+```
+
+Linting:
+
+```powershell
+npm run lint
+```
